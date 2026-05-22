@@ -213,7 +213,7 @@
         <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" wire:click="closeOrderModal"></div>
         
         {{-- Modal Panel --}}
-        <div class="relative bg-white shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar flex flex-col sm:flex-row transform transition-all">
+        <div class="relative bg-white shadow-2xl w-[95vw] sm:w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col sm:flex-row transform transition-all rounded-2xl">
             
             {{-- Left Side: Product Info (Hidden on small mobile) --}}
             <div class="hidden sm:block sm:w-2/5 bg-stone-50 p-8 border-r border-stone-100 flex flex-col">
@@ -249,36 +249,36 @@
             </div>
             
             {{-- Right Side: Form --}}
-            <div class="w-full sm:w-3/5 p-6 sm:p-8 relative">
-                <button wire:click="closeOrderModal" class="absolute top-4 right-6 text-stone-400 hover:text-stone-600 bg-stone-100 hover:bg-stone-200 p-2 rounded-full transition-colors">
+            <div class="w-full sm:w-3/5 p-5 sm:p-8 relative overflow-x-hidden">
+                <button wire:click="closeOrderModal" class="absolute top-4 right-4 sm:right-6 text-stone-400 hover:text-stone-600 bg-stone-100 hover:bg-stone-200 p-2 rounded-full transition-colors z-10">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
                 
-                <h3 class="text-2xl font-bold font-heading text-stone-900 mb-6 sm:hidden">Completar Pedido</h3>
+                <h3 class="text-2xl font-bold font-heading text-stone-900 mb-6 sm:hidden pr-10">Completar Pedido</h3>
                 
                 <form wire:submit.prevent="submitOrder" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div>
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Nombre</label>
-                            <input wire:model="nombre" type="text" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="Juan">
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Nombre</label>
+                            <input wire:model="nombre" type="text" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="Juan">
                             @error('nombre') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Apellido</label>
-                            <input wire:model="apellido" type="text" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="Pérez">
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Apellido</label>
+                            <input wire:model="apellido" type="text" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="Pérez">
                             @error('apellido') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div>
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Teléfono / WhatsApp</label>
-                            <input wire:model="telefono" type="tel" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="1122334455....">
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Teléfono / WhatsApp</label>
+                            <input wire:model="telefono" type="tel" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="1122334455....">
                             @error('telefono') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Email</label>
-                            <input wire:model="email" type="email" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="correo@ejemplo.com">
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Email</label>
+                            <input wire:model="email" type="email" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="correo@ejemplo.com">
                             @error('email') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                     </div>
@@ -286,12 +286,12 @@
                     <hr class="border-stone-100">
                     
                     <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Dirección del Evento</label>
-                        <input wire:model="direccion_evento" type="text" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="Calle, Número, Localidad">
+                        <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Dirección del Evento</label>
+                        <input wire:model="direccion_evento" type="text" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="Calle, Número, Localidad">
                         @error('direccion_evento') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                     </div>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                         <div x-data="{
                             init() {
                                 flatpickr(this.$refs.picker, {
@@ -305,25 +305,25 @@
                                 });
                             }
                         }">
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Fecha</label>
-                            <input x-ref="picker" wire:model="fecha_evento" type="text" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none bg-white" placeholder="Seleccionar fecha..." readonly>
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Fecha</label>
+                            <input x-ref="picker" wire:model="fecha_evento" type="text" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none bg-white" placeholder="Seleccionar fecha..." readonly>
                             @error('fecha_evento') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Hora (Aprox)</label>
-                            <input wire:model="hora_evento" type="time" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none">
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Hora (Aprox)</label>
+                            <input wire:model="hora_evento" type="time" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none bg-white">
                             @error('hora_evento') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-stone-700 mb-2">Invitados</label>
-                            <input wire:model="cantidad_invitados" type="number" min="1" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="0">
+                            <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Invitados</label>
+                            <input wire:model="cantidad_invitados" type="number" min="1" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none" placeholder="0">
                             @error('cantidad_invitados') <span class="text-red-500 text-xs mt-1">{{ $message }}</span> @enderror
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Observaciones</label>
-                        <textarea wire:model="observaciones_cliente" rows="2" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none resize-none" placeholder="Algún detalle a tener en cuenta..."></textarea>
+                        <label class="block text-sm font-semibold text-stone-700 mb-1 sm:mb-2">Observaciones</label>
+                        <textarea wire:model="observaciones_cliente" rows="2" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-stone-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all outline-none resize-none" placeholder="Algún detalle a tener en cuenta..."></textarea>
                     </div>
                     
                     <button type="submit" class="w-full py-4 rounded-xl bg-stone-900 text-white font-bold text-lg hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
