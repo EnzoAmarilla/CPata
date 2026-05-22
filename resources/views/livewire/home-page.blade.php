@@ -53,19 +53,19 @@
 
                 @if($categoryProducts->count() > 0)
                     <div class="mb-20">
-                        <div class="flex items-center gap-4 mb-8">
+                        <div class="flex items-center gap-4 mb-6 sm:mb-8">
                             @if($category->icon)
-                                <span class="text-3xl">{{ $category->icon }}</span>
+                                <span class="text-2xl sm:text-3xl">{{ $category->icon }}</span>
                             @endif
-                            <h3 class="text-3xl font-heading font-bold text-stone-800">{{ $category->name }}</h3>
+                            <h3 class="text-2xl sm:text-3xl font-heading font-bold text-stone-800">{{ $category->name }}</h3>
                             <div class="flex-grow h-px bg-stone-200"></div>
                         </div>
 
-                        <div class="flex flex-col gap-12">
+                        <div class="flex flex-col gap-8 sm:gap-12">
                             @foreach($categoryProducts as $product)
                                 <div class="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col lg:flex-row group">
                                     @if(!empty($product->images) && count($product->images) > 0)
-                                        <div class="relative w-full lg:w-1/5 h-64 lg:h-auto overflow-hidden bg-stone-200">
+                                        <div class="relative w-full lg:w-1/5 h-48 sm:h-64 lg:h-auto overflow-hidden bg-stone-200">
                                             @if(count($product->images) > 1)
                                                 <div x-data="{ activeSlide: 0, slides: {{ count($product->images) }} }" class="relative w-full h-full group/carousel">
                                                     <div class="w-full h-full flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${activeSlide * 100}%)`">
@@ -98,10 +98,10 @@
                                             </div>
                                         @endif
                                     @endif
-                                    <div class="w-full lg:w-4/5 p-6 sm:p-8 flex-grow flex flex-col">
-                                        <h4 class="text-3xl font-heading font-bold text-stone-900 mb-2">{{ $product->name }}</h4>
-                                        <div class="mb-8">
-                                            <p class="text-lg text-stone-600">{{ $product->short_description }}</p>
+                                    <div class="w-full lg:w-4/5 p-4 sm:p-8 flex-grow flex flex-col">
+                                        <h4 class="text-xl sm:text-3xl font-heading font-bold text-stone-900 mb-1 sm:mb-2">{{ $product->name }}</h4>
+                                        <div class="mb-6 sm:mb-8">
+                                            <p class="text-sm sm:text-lg text-stone-600">{{ $product->short_description }}</p>
                                             @if($product->variants->count() > 0)
                                                 <p class="text-primary-500 font-medium text-xs uppercase tracking-wide mt-2">Hace clic en + para ver qué incluye cada opción</p>
                                             @endif

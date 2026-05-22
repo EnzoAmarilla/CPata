@@ -57,6 +57,13 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->navigationItems([
+                \Filament\Navigation\NavigationItem::make('Ver sitio web')
+                    ->url(fn (): string => url('/'))
+                    ->icon('heroicon-o-globe-alt')
+                    ->openUrlInNewTab()
+                    ->sort(-1),
+            ])
             ->pages([
                 Pages\Dashboard::class,
             ])
