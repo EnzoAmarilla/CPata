@@ -21,6 +21,7 @@ class PataDeTerneraSeeder extends Seeder
                 'active' => true,
                 'featured' => false,
                 'order' => 2,
+                'category_id' => 1,
             ]
         );
 
