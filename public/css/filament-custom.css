@@ -1,0 +1,7 @@
+/* Force Filament forms to occupy 100% of the available width */
+.fi-page-content > form:not(.fi-modal form),
+.fi-resource-edit-record-page form:not(.fi-modal form),
+.fi-resource-create-record-page form:not(.fi-modal form) {
+    max-width: 100% !important;
+    width: 100% !important;
+}
