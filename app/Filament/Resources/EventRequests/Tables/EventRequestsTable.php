@@ -97,6 +97,13 @@ class EventRequestsTable
             ])
             ->actions([
                 EditAction::make()->iconButton()->tooltip('Ver / Editar')->color('primary'),
+                Action::make('imprimir_pedido')
+                    ->iconButton()
+                    ->icon('heroicon-m-printer')
+                    ->color('warning')
+                    ->url(fn (\App\Models\EventRequest $record) => route('admin.orders.print', $record))
+                    ->openUrlInNewTab()
+                    ->tooltip('Imprimir Pedido'),
                 Action::make('whatsapp')
                     ->iconButton()
                     ->icon('heroicon-m-chat-bubble-oval-left')

@@ -64,6 +64,11 @@
                     <a href="#catalogo" class="px-6 py-2.5 rounded-full bg-primary-500 text-white font-medium hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                         Hacer Pedido
                     </a>
+                    <a href="/admin" class="text-stone-600 hover:text-primary-500 transition-colors p-2 rounded-full hover:bg-stone-100" title="Panel Admin">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                    </a>
                 </div>
 
                 {{-- Mobile menu button --}}
@@ -86,6 +91,12 @@
                 <a href="#nosotros" class="block px-3 py-3 rounded-md text-base font-medium text-stone-700 hover:text-primary-500 hover:bg-stone-50">Nosotros</a>
                 <a href="#contacto" class="block px-3 py-3 rounded-md text-base font-medium text-stone-700 hover:text-primary-500 hover:bg-stone-50">Contacto</a>
                 <a href="#galeria" class="block px-3 py-3 rounded-md text-base font-medium text-stone-700 hover:text-primary-500 hover:bg-stone-50">Eventos</a>
+                <a href="/admin" class="flex items-center gap-2 px-3 py-3 rounded-md text-base font-medium text-stone-700 hover:text-primary-500 hover:bg-stone-50 border-t border-stone-100 mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+                    Panel Admin
+                </a>
             </div>
         </div>
     </header>
